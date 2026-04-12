@@ -191,16 +191,58 @@
             height: 70px;
             border-radius: 4px;
             padding: 12px 20px;
+            background: linear-gradient(135deg, #f8f6f3 0%, #e9dcd2 100%);
+            border: 1px solid #e508ff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .layer1-large .folder-front::before {
+            content: '';
+            position: absolute;
+            top: 8px;
+            right: 12px;
+            width: 24px;
+            height: 18px;
+            background: #e508ff;
+            clip-path: polygon(85% 0, 100% 12%, 100% 100%, 85% 100%, 80% 75%, 60% 75%, 55% 100%, 45% 100%, 45% 75%, 35% 75%, 30% 100%, 20% 100%, 20% 75%, 10% 75%, 10% 50%, 0 50%, 0 25%, 10% 25%, 10% 0, 20% 0, 20% 25%, 30% 25%, 30% 50%, 40% 50%, 40% 100%, 50% 100%, 50% 50%, 60% 50%, 60% 25%, 70% 25%, 70% 50%, 80% 50%, 80% 25%, 85% 25%);
+            opacity: 0.8;
         }
 
         .layer1-large .folder-label {
             font-size: 0.9rem;
+            color: #1f2049;
         }
 
-        /* Layer_1 Small - Button style */
+/* Layer_1 Small - Button style */
         .layer1-small {
             width: 195px;
             height: 41px;
+        }
+
+        .layer1-small .folder-front {
+            height: 41px;
+            border-radius: 16px;
+            padding: 10px 20px;
+            justify-content: center;
+            background: linear-gradient(135deg, #f8f6f3 0%, #e9dcd2 100%);
+            border: 1px solid #e508ff;
+        }
+
+        .layer1-small .folder-label {
+            font-size: 0.85rem;
+            text-align: center;
+            color: #1f2049;
+            font-weight: 800;
+        }
+
+        .folder-container:hover .layer1-small .folder-front {
+            background: linear-gradient(160deg, #2a2c31 0%, #242529 40%, var(--accent-teal) 100%);
+            border-color: var(--accent-teal);
+        }
+
+        .folder-container:hover .layer1-small .folder-label {
+            color: #f0f0f0;
         }
 
         .layer1-small .folder-front {
