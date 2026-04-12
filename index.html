@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
+        @font-face {
+            font-family: 'Youth';
+            src: url('Youth-Bold.otf') format('opentype');
+            font-weight: 700;
+            font-style: normal;
+        }
         :root {
             --basalt-dark: #1f2049;
             --basalt-mid: #242529;
@@ -314,24 +320,77 @@
             z-index: 1;
         }
 
-        /* Negative space branding */
-        .header-slug {
+        /* Header Section */
+        .header-section {
             position: fixed;
-            top: 40px;
-            left: 40px;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 14px;
-            font-weight: 400;
-            line-height: 18px;
-            color: #444444;
-            letter-spacing: 0.4em;
-            text-transform: uppercase;
-            transition: color 0.3s ease;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 60px;
+            background: transparent;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
             z-index: 100;
         }
 
-        .header-slug:hover {
+        .logo {
+            font-family: 'Youth', sans-serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: #f8f6f3;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .logo:hover {
             color: var(--accent-purple);
+        }
+
+        .nav {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .nav-link {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            color: #666666;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            padding: 8px 0;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-purple);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #f8f6f3;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Negative space branding */
+        .header-slug {
+            display: none;
         }
 
         .coordinates {
@@ -366,7 +425,15 @@
     <div class="basalt-surface" style="filter: url(#basalt-grain);"></div>
     <div class="strata-bg"></div>
 
-    <div class="header-slug">Basaltic / Stratum V.01</div>
+    <!-- Header Section with Logo and Navigation -->
+    <header class="header-section">
+        <a href="#" class="logo">Spitehouse</a>
+        <nav class="nav">
+            <a href="#" class="nav-link">Work</a>
+            <a href="#" class="nav-link">Studio</a>
+            <a href="#" class="nav-link">Contact</a>
+        </nav>
+    </header>
 
     <main class="workspace">
         
