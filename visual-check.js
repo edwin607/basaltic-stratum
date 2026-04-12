@@ -8,7 +8,7 @@ const { chromium } = require('playwright');
   await page.setViewportSize({ width: 1920, height: 1200 });
   
   // Navigate to the site
-  await page.goto('https://a22e4720.basaltic-stratum.pages.dev');
+  await page.goto('https://a793a0a8.basaltic-stratum.pages.dev');
   
   // Wait for page to load
   await page.waitForLoadState('networkidle');
